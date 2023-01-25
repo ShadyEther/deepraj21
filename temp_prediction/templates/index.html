@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Prediction</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+    width: 300px;
+}
+
+#submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#submit-btn:hover {
+    opacity: 0.8;
+}
+
+#result {
+    font-size: 2cm;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+    <h1>Temperature Prediction</h1>
+    <form method="POST" action="/predict">
+        <label>Year:</label>
+        <input type="number" name="year" required id="date"> 
+        <br><br>
+        <label>Month:</label>
+        <input type="number" name="month" required id="date">
+        <br><br>
+        <label>Day:</label>
+        <input type="number" name="day" required>
+        <br><br>
+        <input type="submit" value="Predict" id="submit-btn">
+    </form>
+
+    <br>
+    <div id="result"><br>{{pred}}<br></div>
+</body>
+
+</html>
